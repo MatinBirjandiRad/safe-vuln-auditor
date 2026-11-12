@@ -1,0 +1,11 @@
+{
+  "targets": [],
+  "approval": false,
+  "explicit_authorization_phrase": "",
+  "max_ports_per_target": 8,
+  "allowed_risk_classes": ["IT"],
+  "min_delay_seconds": 1.0,
+  "socket_timeout_seconds": 1.5,
+  "cidrs": [],
+  "endpoints": []
+}

@@ -1,0 +1,17 @@
+services:
+  auditor:
+    build: .
+    image: safe-vuln-auditor:latest
+    read_only: true
+    cap_drop: [ALL]
+    security_opt:
+      - no-new-privileges:true
+    user: "10001:10001"
+    volumes:
+      - ./config:/config:ro
+      - ./output:/output
+    environment:
+      LLM_BASE_URL: ${LLM_BASE_URL:-}
+      LLM_MODEL: ${LLM_MODEL:-}
+      LLM_API_KEY: ${LLM_API_KEY:-}
+    network_mode: bridge
